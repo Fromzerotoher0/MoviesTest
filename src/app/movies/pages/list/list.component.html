@@ -2,10 +2,13 @@
 <mat-divider></mat-divider>
 <br />
 
-<mat-card *ngFor="let movie of movies">
-  <mat-card-header>
-    <mat-card-title>{{ movie.Title }}</mat-card-title>
-    <mat-card-subtitle>{{ movie.Year }}</mat-card-subtitle>
-  </mat-card-header>
-  <img src="{{ movie.Poster }}" alt="" />
-</mat-card>
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="20px">
+
+  <div fxFlex="20" fxFlex.lg="15" fxFlex.sm="30" *ngFor="let movie of movies">
+    <app-movie-card [movie]="movie"></app-movie-card>
+  </div>
+
+
+</div>
+
+

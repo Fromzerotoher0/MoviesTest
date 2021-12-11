@@ -6,9 +6,10 @@ import { MoviesRoutingModule } from './movies-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeComponent } from './pages/home/home.component';
 import { MaterialModule } from '../material/material.module';
+import { MovieCardComponent } from './components/movie-card/movie-card.component';
 
 @NgModule({
-  declarations: [ListComponent, SearchComponent, HomeComponent],
+  declarations: [ListComponent, SearchComponent, HomeComponent, MovieCardComponent],
   imports: [
     CommonModule,
     MoviesRoutingModule,
