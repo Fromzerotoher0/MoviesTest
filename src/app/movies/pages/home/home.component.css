@@ -1,0 +1,12 @@
+.list__text {
+  vertical-align: middle;
+}
+
+.mat-toolbar {
+  background: #3f51b5;
+  color: #fff;
+}
+
+.container {
+  margin: 15px;
+}

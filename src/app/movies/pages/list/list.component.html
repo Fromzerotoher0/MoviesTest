@@ -1,0 +1,11 @@
+<h1>Listado de Peliculas</h1>
+<mat-divider></mat-divider>
+<br />
+
+<mat-card *ngFor="let movie of movies">
+  <mat-card-header>
+    <mat-card-title>{{ movie.Title }}</mat-card-title>
+    <mat-card-subtitle>{{ movie.Year }}</mat-card-subtitle>
+  </mat-card-header>
+  <img src="{{ movie.Poster }}" alt="" />
+</mat-card>
