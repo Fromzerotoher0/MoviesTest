@@ -1,14 +1,48 @@
 <h1>Listado de Peliculas</h1>
 <mat-divider></mat-divider>
 <br />
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>filtrar peliculas</mat-label>
+  <input
+    matInput
+    name="filterMovie"
+    (keyup)="applyFilter($any($event).target.value)"
+    placeholder="digita una pelicula"
+  />
+</mat-form-field>
+<table mat-table [dataSource]="dataSource"  class="mat-elevation-z8">
+  <!-- Title Column -->
+  <ng-container matColumnDef="Title">
+    <th mat-header-cell *matHeaderCellDef>Titulo</th>
+    <td mat-cell *matCellDef="let element">{{ element.Title }}</td>
+  </ng-container>
 
-<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="20px">
+  <!-- Type Column -->
+  <ng-container matColumnDef="Type">
+    <th mat-header-cell *matHeaderCellDef>Tipo</th>
+    <td mat-cell *matCellDef="let element">{{ element.Type }}</td>
+  </ng-container>
 
-  <div fxFlex="20" fxFlex.lg="15" fxFlex.sm="30" *ngFor="let movie of movies">
-    <app-movie-card [movie]="movie"></app-movie-card>
-  </div>
+  <!-- Year Column -->
+  <ng-container matColumnDef="Year">
+    <th mat-header-cell *matHeaderCellDef>Año</th>
+    <td mat-cell *matCellDef="let element">{{ element.Year }}</td>
+  </ng-container>
 
+  <!-- imdbID Column -->
+  <ng-container matColumnDef="imdbID">
+    <th mat-header-cell *matHeaderCellDef>imdbID</th>
+    <td mat-cell *matCellDef="let element">{{ element.imdbID }}</td>
+  </ng-container>
 
-</div>
+  <!-- Poster Column -->
+  <ng-container matColumnDef="Poster">
+    <th mat-header-cell *matHeaderCellDef>Poster</th>
+    <td mat-cell *matCellDef="let element" class="Poster">
+      <img src="{{ element.Poster | image }}" />
+    </td>
+  </ng-container>
 
-
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

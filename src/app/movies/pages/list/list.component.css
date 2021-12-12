@@ -2,3 +2,10 @@ mat-card{
   margin-top: 20px;
 }
 
+table {
+  width: 100%;
+}
+
+table .Poster{
+  width: 20px;
+}

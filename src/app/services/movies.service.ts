@@ -10,4 +10,8 @@ export class MoviesService {
   getMovies() {
     return this.http.get('http://www.omdbapi.com/?s=inception&apikey=79e20939');
   }
+
+  getMovie(movie:string){
+    return this.http.get(`http://www.omdbapi.com/?s=${movie}&apikey=79e20939`)
+  }
 }
