@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'movies',
+    redirectTo: '404',
   },
 ];
 

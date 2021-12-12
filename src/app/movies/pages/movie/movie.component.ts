@@ -10,7 +10,9 @@ import { ActivatedRoute} from '@angular/router';
 export class MovieComponent{
 
   constructor(private movieService:MoviesService,private activatedRoute:ActivatedRoute) {
+    // obtener el id de la pelicula de la url
     this.imdb = this.activatedRoute.snapshot.params['id'];
+    // servicio para obtener una pelicula por su id
     this.movieService.getMovieByImdb(this.imdb).subscribe(resp =>{
       this.movie = resp;
     })

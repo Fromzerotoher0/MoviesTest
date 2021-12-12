@@ -1,6 +1,7 @@
 <h1>Listado de Peliculas</h1>
 <mat-divider></mat-divider>
 <br />
+<!-- campo de texto en el cual se aplica el filtro de peliculas -->
 <mat-form-field class="example-full-width" appearance="fill">
   <mat-label>filtrar peliculas</mat-label>
   <input
@@ -10,22 +11,25 @@
     placeholder="digita una pelicula"
   />
 </mat-form-field>
-<table mat-table [dataSource]="dataSource"  class="mat-elevation-z8">
+<!-- tabla -->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!-- Title Column -->
   <ng-container matColumnDef="Title">
-    <th mat-header-cell *matHeaderCellDef>Titulo</th>
-    <td mat-cell *matCellDef="let element"><a routerLink="/movies/{{element.imdbID}}">{{ element.Title }}</a></td>
+    <th mat-header-cell *matHeaderCellDef>Title</th>
+    <td mat-cell *matCellDef="let element">
+      <a routerLink="/movies/{{ element.imdbID }}">{{ element.Title }}</a>
+    </td>
   </ng-container>
 
   <!-- Type Column -->
   <ng-container matColumnDef="Type">
-    <th mat-header-cell *matHeaderCellDef>Tipo</th>
+    <th mat-header-cell *matHeaderCellDef>Type</th>
     <td mat-cell *matCellDef="let element">{{ element.Type }}</td>
   </ng-container>
 
   <!-- Year Column -->
   <ng-container matColumnDef="Year">
-    <th mat-header-cell *matHeaderCellDef>Año</th>
+    <th mat-header-cell *matHeaderCellDef>Year</th>
     <td mat-cell *matCellDef="let element">{{ element.Year }}</td>
   </ng-container>
 

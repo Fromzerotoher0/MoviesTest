@@ -9,24 +9,16 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ListComponent{
   constructor(private MovieService: MoviesService) {
+    //servicio para obtener las peliculas
     this.MovieService.getMovies().subscribe((resp: any) => {
-
       this.dataSource = new MatTableDataSource(resp.Search);
-      console.log(resp.Search);
     });
   }
-
+  // fuente de datos para la tabla
   dataSource: any;
+  // declaracion de las columnas de la tabla
   displayedColumns: string[] = ['Title', 'Type', 'Year', 'imdbID', 'Poster'];
-
-
-  setupFilter(column: string) {
-    this.dataSource.filterPredicate = (d:any, filter: string) => {
-      const textToSearch = d[column] && d[column].toLowerCase() || '';
-      return textToSearch.indexOf(filter) !== -1;
-    };
-  }
-
+  //funcion para filtrar las peliculas obtenidas
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }

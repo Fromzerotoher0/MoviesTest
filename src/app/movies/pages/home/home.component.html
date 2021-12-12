@@ -1,5 +1,7 @@
 <mat-sidenav-container fullscreen>
+  <!-- Barra lateral-->
   <mat-sidenav #sidenav mode="push">
+    <!--menu de la barra lateral-->
     <mat-toolbar color="primary">
       <span>Menu</span>
       <span class="spacer"></span>
@@ -7,6 +9,7 @@
         <mat-icon>menu</mat-icon>
       </button>
     </mat-toolbar>
+    <!-- items del menu de la barra lateral -->
     <mat-nav-list>
       <a routerLink="./list" mat-list-item (click)="sidenav.toggle()"
         ><mat-icon>movie</mat-icon><span>listado de peliculas</span></a
@@ -17,12 +20,18 @@
       >
     </mat-nav-list>
   </mat-sidenav>
+  <!-- fin de la barra lateral -->
+
+  <!-- menu principal-->
   <mat-toolbar>
     <button mat-button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
+    <h1>Movies App</h1>
   </mat-toolbar>
+  <!-- fin del menu principal -->
 
+  <!-- router donde se cargan los componentes hijos-->
   <div class="container">
     <router-outlet></router-outlet>
   </div>

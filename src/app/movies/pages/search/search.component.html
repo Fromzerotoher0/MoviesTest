@@ -1,6 +1,7 @@
 <h1>Buscador de peliculas</h1>
 <mat-divider></mat-divider>
 <br />
+<!-- campo de texto para buscar peliculas por su titulo -->
 <mat-form-field class="example-full-width" appearance="fill">
   <mat-label>Buscador de peliculas</mat-label>
   <input
@@ -10,6 +11,8 @@
   />
 </mat-form-field>
 <br />
+
+<!-- tabla en la que se almacenan las peliculas obtenidas -->
 <table
   mat-table
   [dataSource]="dataSource"
