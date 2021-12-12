@@ -5,16 +5,21 @@
   <mat-label>Buscador de peliculas</mat-label>
   <input
     matInput
-    (keyup)="searchMovie($any($event).target.value)"
+    (keyup.enter)="searchMovie($any($event).target.value)"
     placeholder="digita una pelicula"
   />
 </mat-form-field>
-<br>
-<table mat-table [dataSource]="dataSource" *ngIf="touched == 'yes'"  class="mat-elevation-z8">
+<br />
+<table
+  mat-table
+  [dataSource]="dataSource"
+  *ngIf="touched == 'yes'"
+  class="mat-elevation-z8"
+>
   <!-- Title Column -->
   <ng-container matColumnDef="Title">
     <th mat-header-cell *matHeaderCellDef>Titulo</th>
-    <td mat-cell *matCellDef="let element">{{ element.Title }}</td>
+    <td mat-cell *matCellDef="let element"><a routerLink="/movies/{{element.imdbID}}">{{ element.Title }}</a></td>
   </ng-container>
 
   <!-- Type Column -->

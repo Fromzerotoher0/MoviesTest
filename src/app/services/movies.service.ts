@@ -8,10 +8,14 @@ export class MoviesService {
   constructor(private http: HttpClient) {}
 
   getMovies() {
-    return this.http.get('http://www.omdbapi.com/?s=inception&apikey=79e20939');
+    return this.http.get('http://www.omdbapi.com/?s=avengers&apikey=79e20939');
   }
 
   getMovie(movie:string){
     return this.http.get(`http://www.omdbapi.com/?s=${movie}&apikey=79e20939`)
+  }
+
+  getMovieByImdb(imdb:string){
+    return this.http.get(`http://www.omdbapi.com/?i=${imdb}&apikey=79e20939`)
   }
 }

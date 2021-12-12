@@ -8,9 +8,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { MaterialModule } from '../material/material.module';
 import { ImagePipe } from './pipes/image.pipe';
 import { FormsModule } from '@angular/forms';
+import { MovieComponent } from './pages/movie/movie.component';
 
 @NgModule({
-  declarations: [ListComponent, SearchComponent, HomeComponent, ImagePipe],
+  declarations: [ListComponent, SearchComponent, HomeComponent, ImagePipe, MovieComponent],
   imports: [
     CommonModule,
     MoviesRoutingModule,

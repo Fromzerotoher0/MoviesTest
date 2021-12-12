@@ -1,0 +1,13 @@
+.container{
+  display: flex;
+  flex-flow: row;
+  width: 90vw;
+  height: 80vh;
+}
+.movie__information{
+  width: 70%;
+}
+.movie__image{
+  padding: 20px;
+  width: 30%;
+}

@@ -9,3 +9,8 @@ table {
 table .Poster{
   width: 20px;
 }
+
+a{
+  text-decoration: none;
+  color: black;
+}

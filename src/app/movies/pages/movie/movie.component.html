@@ -1,0 +1,21 @@
+<div class="container">
+  <section class="movie__information">
+    <h1>{{ movie.Title }}</h1>
+    <br />
+    <h2>Information</h2>
+    <br />
+    <p><strong>Year : </strong>{{ movie.Year }}</p>
+    <p><strong>Released : </strong>{{ movie.Released }}</p>
+    <p><strong>Genre : </strong>{{ movie.Genre }}</p>
+    <p><strong>Director : </strong>{{ movie.Director }}</p>
+    <p><strong>Actors : </strong>{{ movie.Actors }}</p>
+    <p><strong>Plot : </strong>{{ movie.Plot }}</p>
+    <p><strong>Languages : </strong>{{ movie.Language }}</p>
+    <p><strong>MetaScore : </strong>{{ movie.Metascore }}/100</p>
+    <p><strong>imdbRating : </strong>{{ movie.imdbRating }}</p>
+    <p><strong>BoxOffice : </strong>{{ movie.BoxOffice }}</p>
+  </section>
+  <section class="movie__image">
+    <img src="{{ movie.Poster | image }}" alt="" />
+  </section>
+</div>
